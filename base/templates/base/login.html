@@ -1,17 +1,26 @@
+<!-- Нэвтрэх хэсэг код -->
 {% extends 'base/main.html' %}
 {% block content %}
 
 <div class="header-bar">
-    <h1>Login</h1>
+    <h1>Нэвтрэх</h1>
 </div>
 
 <div class="card-body">
     <form method="POST">
         {% csrf_token %}
-        {{form.as_p}}
+        <div class="form-group">
+            <input type="text" class="form-control" name="username" placeholder="Username">
+        </div>
+        <br/>
+          <div class="form-group">
+            <input type="password" class="form-control" name="password" placeholder="Password">
+          </div>
+          <br/>
         <input class="button" type="submit" value="Login">
     </form>
-    <p>Don't have an account? <a href="{% url 'register' %}">Register</a></p>
+    <br/>
+    <small id="emailHelp" class="form-text text-muted">Хаяг байхгүй бол бүртгүүлнэ үү<a href="{% url 'register' %}">Бүртгүүлэх</a></small>
 </div>
 
 

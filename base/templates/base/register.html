@@ -1,24 +1,30 @@
+<!-- Бүртгэлийн хэсэг -->
 {% extends 'base/main.html' %}
 {% block content %}
 
 <div class="header-bar">
-    <h1>Register</h1>
+    <h1>Бүртгүүлэх</h1>
 </div>
 
 <div class="card-body">
     <form method="POST">
         {% csrf_token %}
-        <label>{{form.username.label}}</label>
-        {{form.username}}
-
-        <label>{{form.password1.label}}</label>
-        {{form.password1}}
-
-        <label>{{form.password2.label}}</label>
-        {{form.password2}}
+        <div class="form-group">
+            <input type="text" class="form-control" name="username" placeholder="Username">
+        </div>
+        <br/>
+          <div class="form-group">
+            <input type="password" class="form-control" name="password1" placeholder="Password">
+          </div>
+          <br/>
+          <div class="form-group">
+            <input type="password" class="form-control" name="password2" placeholder="Retype-password">
+          </div>
+          <br/>
         <input style="margin-top:10px ;" class="button" type="submit" value="Register">
     </form>
-    <p>Already have an account? <a href="{% url 'login' %}">Login</a></p>
+    <br/>
+    <small id="emailHelp" class="form-text text-muted">Already have an account?<a href="{% url 'login' %}">Login</a></small>
 </div>
 
 
